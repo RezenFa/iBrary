@@ -1,0 +1,34 @@
+.invisible {
+    display: none !important;
+}
+
+.nav-wrapper:not(.logged-in) ul {
+    display: none;
+}
+
+#scan {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+
+#scan-loading, #scan-error {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 50px;
+}
+
+#scan-error {
+    color: red;
+    font-size: 18px;
+}
+
+#scan-result {
+    padding: 12px;
+}
+
+#modal-scanner .modal-content {
+    display: flex;
+    justify-content: center;
+}

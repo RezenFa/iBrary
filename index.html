@@ -1,19 +1,99 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODE Library</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
 <body>
-    <button id="scan">Scan</button>
+    <nav>
+        <div id="nav" class="nav-wrapper">
+            <a class="brand-logo center">Library</a>
+            <ul class="left hide-on-med-and-down">
+                <li>
+                    <a href="">Books</a>
+                </li>
+                <li>
+                    <a href="" onclick="logOut()">Logout</a>
+                </li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <span id="name"></span> (
+                    <span id="email"></span>)
+                </li>
+                <li class="avatar">
+                    <img id="photo" class="circle" width="40px" />
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <div id="feed"></div>
-    <div id="output"></div>
+    <div id="loader">
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+    </div>
+
+    <div id="login" class="invisible">
+        <div id="firebaseui-auth-container"></div>
+    </div>
+
+    <div id="content" class="invisible">
+        <a id="scan" class="btn-floating btn-large waves-effect waves-light red">
+            <i class="material-icons">aspect_ratio</i>
+        </a>
+
+        <div id="scan-loader" class="invisible">
+            <div class="preloader-wrapper active">
+                <div class="spinner-layer spinner-red-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="scan-error" class="invisible">
+            <div class="text"></div>
+        </div>
+
+        <div id="scan-result" class="invisible"></div>
+    </div>
+
+    <div id="modal-scanner" class="modal">
+        <div class="modal-content">
+            <div id="feed"></div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cash-dom@2.3.7/dist/cash.min.js"></script>
-    <script src="quagga.js"></script>
-    <script src="scanner.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/quagga.js"></script>
+    <script src="js/scanner.js"></script>
 </body>
 
 </html>

@@ -14,8 +14,4 @@ var app_firebase = {};
   firebase.initializeApp(config);
   
   app_firebase = firebase;
-
-
 })();
-
-
