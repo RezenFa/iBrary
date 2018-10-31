@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cash-dom@2.3.7/dist/cash.min.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Wanna rent a book now?</h1>
+
+    <button type="button" onclick="returnMain()">Home</button>
+
+    <img id="photo" height="30" width="30">
+    <div id="name"></div>
+    <div id="email"></div>
+
+    <div class="col-md-4">
+        <form>
+            <div>
+                <label for="isbn">Isbn:</label>
+                <input type="text" id="isbn" placeholder="isbn code">
+                <select id="category">
+                    <option value="STS">STS</option>
+                    <option value="ID">ID</option>
+                    <option value="SE">SE</option>
+                    <option value="PM">PM</option>
+                </select>
+                <span id="bookId"></span>
+                <hr>
+                <input type="text" id="title" placeholder="Title">
+                <input type="text" id="description" placeholder="Description">
+                <input type="text" id="authors" placeholder="Authors">
+                <input type="text" id="publishedDate">
+                <input type="number" id="pages" placeholder="No. of pages">
+                <input type="text" id="language" placeholder="DE">
+                <img id="bookImg">
+            </div>
+
+            <button type="button" id="addBtn" onclick="create()">Add</button>
+            <button type="button" id="saveBtn" onclick="save()" style="display: none">Save</button>
+            <button type="button" id="removeBtn" onclick="remove()" style="display: none">Remove</button>
+            <button type="button" id="cancelBtn" onclick="cancel()" style="display: none">Cancel</button>
+
+
+        </form>
+    </div>
+    
+    <ol id="bookList"></ol>
+
+    <script src="firebase.js"></script>
+    <script src="add.js"></script>
+
+</body>
+
+</html>
