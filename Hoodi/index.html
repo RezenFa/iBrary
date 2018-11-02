@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hoodi</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2" />
+    <link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <div id="status-bar">
+            <div id="title"></div>
+            <div id="logout">
+                <img src="images/logout.svg" />
+            </div>
+        </div>
+
+        <div class="content">
+            <div id="page-login" class="page centered active" data-title="">
+                Hey, there!<br />
+                My name is Hootie<br />
+                <img src="images/owl.svg" /><br />
+                Sign in to get things done!<br />
+
+                <div id="firebaseui-auth-container"></div>
+            </div>
+
+            <div id="page-main" class="page centered" data-title="Home">
+                Hi, &lt;username&gt;!<br />
+                What can I do for you?<br />
+                <img src="images/owl.svg" />
+                <div class="button">Borrow</div>
+                <div class="button">Return</div>
+            </div>
+
+            <div id="page-library" class="page" data-title="Library">
+                library
+            </div>
+
+            <div id="page-borrowed" class="page" data-title="Borrowed">
+                borrowed
+            </div>
+        </div>
+
+        <div id="navigation-bar">
+            <img src="images/home.svg" />
+            <img src="images/library.svg" />
+            <img src="images/borrowed.svg" />
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    
+    <script src="js/firebase.js"></script>
+</body>
+
+</html>
