@@ -1,0 +1,40 @@
+#page-login {
+    text-align: center;
+    font-size: 24px;
+}
+
+#page-login img {
+    margin-top: 21px;
+    margin-bottom: 19px;
+}
+
+#page-main {
+    text-align: center;
+    font-size: 24px;
+}
+
+#page-main img {
+    margin-top: 21px;
+    margin-bottom: 29px;
+}
+
+#page-main .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 245px;
+    height: 80px;
+    background: white;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15), -4px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    color: #005A9B;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#page-main .button:first-of-type {
+    margin-bottom: 12px;
+}
