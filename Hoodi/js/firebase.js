@@ -1,30 +1,27 @@
-var config = {
+let userData = null;
+
+firebase.initializeApp({
     apiKey: "AIzaSyB3488lHuvNcLJCNbcztWlOb4yMDazLphY",
     authDomain: "fir-books-caf87.firebaseapp.com",
     databaseURL: "https://fir-books-caf87.firebaseio.com",
     projectId: "fir-books-caf87",
     storageBucket: "fir-books-caf87.appspot.com",
     messagingSenderId: "198487303066"
-};
+});
 
-firebase.initializeApp(config);
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        userData = user;
+        initContent();
+        changePage("main");
+    } else {
+        userData = null;
+        changePage("login");
+    }
+});
 
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-var uiConfig = {
-    callbacks: {
-        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-            return true;
-        },
-        uiShown: function () {
-            document.getElementById('loader').style.display = 'none';
-        }
-    },
-
-    signInSuccessUrl: 'main.html',
-    signInOptions: [
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    ]
-};
-
-ui.start('#firebaseui-auth-container', uiConfig);
+ui.start("#button-login", {
+    signInSuccessUrl: "index.html",
+    signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID]
+});
