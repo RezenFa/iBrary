@@ -15,5 +15,5 @@ function changePage(name) {
 }
 
 function initContent() {
-    $("#page-main-username").html(userData.displayName);
+    $(".fb-username").html(userData.displayName);
 }

@@ -13,7 +13,7 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         userData = user;
         initContent();
-        changePage("main");
+        changePage("library");
     } else {
         userData = null;
         changePage("login");

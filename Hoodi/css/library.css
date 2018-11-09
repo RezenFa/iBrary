@@ -1,0 +1,94 @@
+#page-library {
+    padding: 20px;
+}
+
+.search-bar {
+    width: 100%;
+    height: 40px;
+    background: white;
+
+    display: grid;
+    grid-template-columns: auto 40px;
+    
+    justify-items: center;
+    align-items: center;
+
+    border-radius: 4px;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15), -4px 0px 4px rgba(0, 0, 0, 0.15);
+}
+
+.search-bar input {
+    width: 100%;
+    margin-left: 14px;
+
+    font-size: 16px;
+    justify-self: stretch;
+
+    border: 0;
+    outline: none;
+}
+
+.filter-bar {
+    width: 100%;
+
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    display: flex;
+    justify-content: space-around;
+
+    font-size: 20px;
+}
+
+.book-list .book {
+    width: 100%;
+    background: white;
+    
+    margin-bottom: 12px;
+
+    color: #005A9B;
+
+    border-radius: 4px;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15), -4px 0px 4px rgba(0, 0, 0, 0.15);
+}
+
+.book-list .book .title {
+    height: 40px;
+
+    display: grid;
+    grid-template-columns: auto 40px;
+    
+    justify-items: center;
+    align-items: center;
+}
+
+.book-list .book .title .text {
+    font-size: 16px;
+    margin-left: 16px;
+    justify-self: stretch;
+}
+
+.book-list .book.expanded .info {
+    display: block;
+}
+
+.book-list .book .info {
+    display: none;
+
+    margin-top: 16px;
+}
+
+.book-list .book .info .data {
+    display: grid;
+    grid-template-columns: 25px 80px 15px auto;
+    grid-template-rows: auto;
+    grid-template-areas: ". key . value";
+}
+
+.book-list .book .info .data .key {
+    grid-area: key;
+}
+
+.book-list .book .info .data .value {
+    grid-area: value;
+}

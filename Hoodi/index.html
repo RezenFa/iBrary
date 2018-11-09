@@ -6,8 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2" />    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2" />
     <link rel="stylesheet" href="css/generic.css" />
+    <link rel="stylesheet" href="css/library.css" />
     <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/ui.css" />
 
@@ -34,19 +35,83 @@
             </div>
 
             <div id="page-main" class="page centered" data-title="Home">
-                <span>Hi, <span id="page-main-username"></span>!</span>
+                <span>Hi, <span class="fb-username"></span>!</span>
                 What can I do for you?<br />
                 <img src="images/owl.svg" />
                 <div class="button" onclick="changePage('library')">Borrow</div>
                 <div class="button" onclick="changePage('borrowed')">Return</div>
             </div>
-                
+
             <div id="page-library" class="page" data-title="Library">
-                
+                <div class="search-bar">
+                    <input type="text" placeholder="Place keyword here..." />
+                    <img src="images/search.svg" />
+                </div>
+
+                <div class="filter-bar">
+                    <label>
+                        <input type="checkbox" /> ID
+                    </label>
+                    <label>
+                        <input type="checkbox" /> PM
+                    </label>
+                    <label>
+                        <input type="checkbox" /> SE
+                    </label>
+                </div>
+
+                <div class="book-list">
+                    <div class="book expanded">
+                        <div class="title">
+                            <div class="text">A History Of Time</div>
+                            <img src="images/search.svg" />
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="title">
+                            <div class="text">Borderlands</div>
+                            <div class="img"><img src="images/search.svg" /></div>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="title">
+                            <div class="text">Communication ABC</div>
+                            <div class="img"><img src="images/search.svg" /></div>
+                        </div>
+                    </div>
+                    <div class="book">
+                        <div class="title">
+                            <div class="text">How To: Code</div>
+                            <div class="img"><img src="images/search.svg" /></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="page-borrowed" class="page" data-title="Borrowed">
                 borrowed
+            </div>
+
+            <div id="page-borrow-completed" class="page centered" data-title="">
+                Hooooohhhh<br />
+                <span>Well done, <span class="fb-username"></span>!</span><br />
+                <img src="images/owl.svg" /><br />
+                You got a charmed one!<br />
+                Good things happen,<br />
+                if you treat it with love.
+
+                <div id="button-login"></div>
+            </div>
+
+            <div id="page-return-completed" class="page centered" data-title="">
+                Hooooohhhh<br />
+                <span>Thank you, <span class="fb-username"></span>!</span><br />
+                <img src="images/owl.svg" /><br />
+                Please place it at<br />
+                <span id="return-book-id"></span><br />
+                to bring it home.
+
+                <div id="button-login"></div>
             </div>
         </div>
 
@@ -60,7 +125,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cash-dom@2.3.7/dist/cash.min.js"></script>
-    
+
     <script src="js/firebase.js"></script>
     <script src="js/nav.js"></script>
 </body>

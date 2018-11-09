@@ -1,4 +1,6 @@
 #status-bar {
+    z-index: 100;
+
     position: fixed;
     top: 0;
 
@@ -25,6 +27,8 @@
 }
 
 #navigation-bar {
+    z-index: 100;
+    
     position: fixed;
     bottom: 0;
 
